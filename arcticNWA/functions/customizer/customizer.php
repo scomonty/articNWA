@@ -158,12 +158,8 @@
 					'id'         => 'customizer_repeater_56d7ea7f40b96',
 					'color'      => '#4caf50',
 					),
-
-
 				) );
-
 			}
-
 		}
 
 		// arctic default testimonial data.
@@ -173,8 +169,8 @@
 			$arctic_testimonial_content_control->default = json_encode( array(
 				array(
 				'title'      => isset($testimonial_data['testimonials_name_one'])? $testimonial_data['testimonials_name_one']:'Robert Johnson',
-				'text'       => isset($testimonial_data['testimonials_text_one'])? $testimonial_data['testimonials_text_one']:'We are group of passionate designers and developers who really love to create wordpress themes with amazing support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...',
-				'designation' => isset($testimonial_data['testimonials_designation_one'])? $testimonial_data['testimonials_designation_one']:'(CEO & Founder)',
+				'text'       => isset($testimonial_data['testimonials_text_one'])? $testimonial_data['testimonials_text_one']:'Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...',
+				'designation' => isset($testimonial_data['testimonials_designation_one'])? $testimonial_data['testimonials_designation_one']:'5',
 				'link'       => '#',
 				'image_url'  => isset($testimonial_data['testimonials_image_one'])? $testimonial_data['testimonials_image_one']:get_template_directory_uri()."/images/item12.jpg",
 				'id'         => 'customizer_repeater_56d7ea7f40b96',
@@ -183,8 +179,8 @@
 				),
 				array(
 				'title'      => isset($testimonial_data['testimonials_name_two'])? $testimonial_data['testimonials_name_two']:'Annah Doe',
-				'text'       => isset($testimonial_data['testimonials_text_two'])? $testimonial_data['testimonials_text_two']:'We are group of passionate designers and developers who really love to create wordpress themes with amazing support. Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...',
-				'designation' => isset($testimonial_data['testimonials_designation_two'])? $testimonial_data['testimonials_designation_two']:'(Team Leader)',
+				'text'       => isset($testimonial_data['testimonials_text_two'])? $testimonial_data['testimonials_text_two']:'Widest laborum dolo rumes fugats untras. Ethar omnis iste natus error sit voluptatem accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem ipsum am quaerat voluptatem...',
+				'designation' => isset($testimonial_data['testimonials_designation_two'])? $testimonial_data['testimonials_designation_two']:'4.5',
 				'link'       => '#',
 				'image_url'  => isset($testimonial_data['testimonials_image_two'])? $testimonial_data['testimonials_image_two']:get_template_directory_uri()."/images/item12.jpg",
 				'id'         => 'customizer_repeater_56d7ea7f40b97',

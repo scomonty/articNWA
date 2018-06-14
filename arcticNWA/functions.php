@@ -9,7 +9,8 @@
 	// customizer files include
 	require( ARCTIC_THEME_FUNCTIONS_PATH . '/customizer/custo_general_settings.php' );
 	require( ARCTIC_THEME_FUNCTIONS_PATH . '/customizer/custo_sections_settings.php' );
-	require( ARCTIC_THEME_FUNCTIONS_PATH . '/customizer/custo_template_settings.php' );
+	//require( ARCTIC_THEME_FUNCTIONS_PATH . '/customizer/custo_template_settings.php' );
+	require( ARCTIC_THEME_FUNCTIONS_PATH . '/customizer/custo_faq_settings.php' );
 	require( ARCTIC_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
 
 	require( ARCTIC_THEME_FUNCTIONS_PATH . '/css/styles.php');

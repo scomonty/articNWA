@@ -15,7 +15,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 
 	/* Slider Section */
 	$wp_customize->add_section( 'slider_section' , array(
-		'title'      => __('Banner settings', 'arctic'),
+		'title'      => __('Banner Settings', 'arctic'),
 		'panel'  => 'section_settings',
 		'priority'   => 0,
    	) );
@@ -23,7 +23,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		// Enable slider
 		$wp_customize->add_setting( 'arctic_theme_options[home_page_banner_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'arctic_theme_options[home_page_banner_enabled]' , array(
-				'label'    => __('Enable banner', 'arctic' ),
+				'label'    => __('Enable Banner', 'arctic' ),
 				'section'  => 'slider_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -36,7 +36,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		//Banner Title
 		$wp_customize->add_setting(
 		'arctic_theme_options[caption_head]', array(
-			'default'        => __('Arctic NWA Cryotherapy.','arctic'),
+			'default'        => __('ArcticNWA Cryotherapy.','arctic'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'arctic_input_field_sanitize_text',
 			'type' => 'option',
@@ -459,17 +459,17 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 
 
-		//Reviews Section
-	$wp_customize->add_section( 'reviews_settings' , array(
-		'title'      => __('Reviews settings', 'arctic'),
+		//Testimional Section
+	$wp_customize->add_section( 'testimonials_settings' , array(
+		'title'      => __('Testimonial settings', 'arctic'),
 		'panel'  => 'section_settings',
 		'priority'   => 5,
    	) );
 
-		$wp_customize->add_setting( 'arctic_theme_options[home_reviews_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
-		$wp_customize->add_control(	'arctic_theme_options[home_reviews_section_enabled]' , array(
-				'label'    => __( 'Enable Reviews section', 'arctic' ),
-				'section'  => 'reviews_settings',
+		$wp_customize->add_setting( 'arctic_theme_options[home_testimonials_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
+		$wp_customize->add_control(	'arctic_theme_options[home_testimonials_section_enabled]' , array(
+				'label'    => __( 'Enable Testimonials section', 'arctic' ),
+				'section'  => 'testimonials_settings',
 				'type'     => 'radio',
 				'choices' => array(
 					'on'=>__('ON', 'arctic'),
@@ -478,44 +478,37 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 
 		// testmonial section title
-		$wp_customize->add_setting( 'arctic_theme_options[reviews_title]',
+		$wp_customize->add_setting( 'arctic_theme_options[testimonials_title]',
 		array( 'default' => __('Don\'t just take our word for it.', 'arctic' ) , 'type'=>'option', 'sanitize_callback' => 'arctic_input_field_sanitize_text'  ) );
-		$wp_customize->add_control(	'arctic_theme_options[reviews_title]',
+		$wp_customize->add_control(	'arctic_theme_options[testimonials_title]',
 			array(
 				'label'    => __( 'Title', 'arctic' ),
-				'section'  => 'reviews_settings',
+				'section'  => 'testimonials_settings',
 				'type'     => 'text',
 		));
 
-		// testmonial section desc
-		$wp_customize->add_setting( 'arctic_theme_options[reviews_text]', array( 'default' => __('We are a group of passionate designers & developers', 'arctic' ) , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
-		$wp_customize->add_control(	'arctic_theme_options[reviews_text]',
-			array(
-				'label'    => __( 'Description', 'arctic' ),
-				'section'  => 'reviews_settings',
-				'type'     => 'textarea',
-		));
-
 		if ( class_exists( 'arctic_Repeater' ) ) {
-			$wp_customize->add_setting( 'arctic_reviews_content', array(
+			$wp_customize->add_setting( 'arctic_testimonial_content', array(
 			'sanitize_callback' => 'arctic_repeater_sanitize',
 			) );
 
-			$wp_customize->add_control( new arctic_Repeater( $wp_customize, 'arctic_reviews_content', array(
+			$wp_customize->add_control( new arctic_Repeater( $wp_customize, 'arctic_testimonial_content', array(
 				'label'                             => esc_html__( 'reviews content', 'arctic' ),
-				'section'                           => 'reviews_settings',
+				'section'                           => 'testimonials_settings',
 				'add_field_label'                   => esc_html__( 'Add new reviews', 'arctic' ),
 				'item_name'                         => esc_html__( 'reviews', 'arctic' ),
 				'customizer_repeater_title_control' => true,
 				'customizer_repeater_text_control'  => true,
-				'customizer_repeater_link_control'  => true,
-				'customizer_repeater_image_control' => true,
 				'customizer_repeater_designation_control' => true,
-				'customizer_repeater_checkbox_control' => true,
 				) ) );
 		}
 
-
+/* How it Works section */
+	$wp_customize->add_section( 'whatItIs_section' , array(
+		'title'      => __('What It Is settings', 'arctic'),
+		'panel'  => 'section_settings',
+		'priority'   => 7,
+   	) );
 
 // Enable what it is
 		$wp_customize->add_setting( 'arctic_theme_options[what_it_is_panel_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
@@ -528,6 +521,43 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 					'off'=>'OFF'
 				)
 		));
+		// what it is headline
+		$wp_customize->add_setting( 'arctic_theme_options[what_it_is_head_title]',
+		array( 'default' => __('What is ArcticNWA Whole Body Cryotherapy?','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[what_it_is_head_title]',
+			array(
+				'label'    => __( 'What It Is Headline', 'arctic' ),
+				'section'  => 'whatItIs_section',
+				'type'     => 'textarea',
+		));
+				// what it is content
+		$wp_customize->add_setting( 'arctic_theme_options[what_it_is_text]',
+		array( 'default' => __('Whole Body Cryotherapy is one of the fastest-growing, holistic, wellness solutions that promotes natural healing at the cellular level. By exposing yourself to temperatures around -167°F with nitrogen vapor in the ArcticNWA for up to three minutes, your body protects your internal organs by pushing blood to the core where it circulates, keeping your core temperature intact while your blood picks up vital nutrients. After exiting the ArcticNWA, blood recirculates back into your outer extremities.','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[what_it_is_text]',
+			array(
+				'label'    => __( 'What It Is Text', 'arctic' ),
+				'section'  => 'whatItIs_section',
+				'type'     => 'textarea',
+		));
+		//What It Is image
+		$wp_customize->add_setting( 'arctic_theme_options[what_it_is_image]',array('default' => get_template_directory_uri().'/images/cryo.png',
+		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'arctic_theme_options[what_it_is_image]',
+				array(
+					'label' => __('Image','arctic'),
+					'section' => 'example_section_one',
+					'settings' =>'arctic_theme_options[what_it_is_image]',
+					'section' => 'whatItIs_section',
+					'type' => 'upload',
+				)
+			)
+		);
+
+
 
 
 
@@ -662,10 +692,19 @@ function arctic_register_home_section_partials( $wp_customize ){
 		'selector'            => '.body_three ul',
 		'settings'            => 'arctic_theme_options[accordion_panel_three_bullet_one]',
 	) );
-	$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[reviews_title]', array(
+	$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[testimonials_title]', array(
 		'selector'            => '#reviewsPanel h2',
-		'settings'            => 'arctic_theme_options[reviews_title]',
+		'settings'            => 'arctic_theme_options[testimonials_title]',
 	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[what_it_is_head_title]', array(
+		'selector'            => '#WhatItIs h2',
+		'settings'            => 'arctic_theme_options[what_it_is_head_title]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[what_it_is_text]', array(
+		'selector'            => '#WhatItIs p',
+		'settings'            => 'arctic_theme_options[what_it_is_text]',
+	) );
+
 
 
 

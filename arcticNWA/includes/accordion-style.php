@@ -65,7 +65,7 @@
     }
 
     [data-component-id="803"].accordion-item._item-open {
-      background-image: url('/wp-content/themes/arcticNWA/images/cryo.jpg');
+      background-image: url('/wp-content/themes/arcticNWA/images/runner-mobile.jpg');
       background-position: 0 0 0 0;
     }
 
@@ -75,14 +75,14 @@
       }
 
       [data-component-id="803"].accordion-item._item-open {
-        background-image: url('/wp-content/themes/arcticNWA/images/cryo.jpg');
+        background-image: url('/wp-content/themes/arcticNWA/images/runner-tablet.jpg');
         background-position: center;
       }
     }
 
     @media (min-width: 1024px) {
       [data-component-id="803"].accordion-item._item-open {
-        background-image: url('/wp-content/themes/arcticNWA/images/cryo.jpg');
+        background-image: url('/wp-content/themes/arcticNWA/images/runner.jpg');
         background-position: center;
       }
     }
@@ -94,7 +94,7 @@
     }
 
     [data-component-id="804"].accordion-item._item-open {
-      background-image: url('/wp-content/themes/arcticNWA/images/man.jpg');
+      background-image: url('/wp-content/themes/arcticNWA/images/man-mobile.jpg');
       background-position: 0 0 0 0;
     }
 
@@ -104,7 +104,7 @@
       }
 
       [data-component-id="804"].accordion-item._item-open {
-        background-image: url('/wp-content/themes/arcticNWA/images/man.jpg');
+        background-image: url('/wp-content/themes/arcticNWA/images/man-tablet.jpg');
         background-position: center;
       }
     }
@@ -123,7 +123,7 @@
     }
 
     [data-component-id="805"].accordion-item._item-open {
-      background-image: url('/wp-content/themes/arcticNWA/images/vball.jpg');
+      background-image: url('/wp-content/themes/arcticNWA/images/vball-mobile.jpg');
       background-position: 0 0 0 0;
     }
 
@@ -133,7 +133,7 @@
       }
 
       [data-component-id="805"].accordion-item._item-open {
-        background-image: url('/wp-content/themes/arcticNWA/images/vball.jpg');
+        background-image: url('/wp-content/themes/arcticNWA/images/vball-tablet.jpg');
         background-position: center;
       }
     }

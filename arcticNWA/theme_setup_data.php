@@ -4,7 +4,7 @@
  * @package        ArcticNWA
  * @copyright      2018 Webby D
  * @license        license.txt
- * @filesource     wp-content/themes/arcticNWA/theme_setup_data.php
+ * @filesource     wp-content/themes/ArcticNWA/theme_setup_data.php
  *	Admin  & front end defual data file
  *-----------------------------------------------------------------------------------*/
 
@@ -28,7 +28,7 @@ function theme_setup_data()
 			'home_page_slider_enabled'=>'on',
 			'home_service_section_enabled'=>'on',
 			'home_project_section_enabled'=>'on',
-			'home_reviews_section_enabled'=>'on',
+			'home_testimonials_section_enabled'=>'on',
 			'home_recentblog_section_enabled'=>'on',
 			'contact_info_enabled' => 'on',
 			'contact_google_map_enabled'=>'on',
@@ -39,9 +39,10 @@ function theme_setup_data()
 			'how_it_works_panel_enabled'=>'on',
 			'accordion_panel_enabled'=>'on',
 			'what_it_is_panel_enabled' =>'on',
+			'frequently_asked_question_panel_enabled' =>'on',
 			//'slider_head_title' =>__('arctic: the perfect WordPress theme for an app and web developer','arctic'),//Slide Heading
 			'banner_image'=>  $template_uri .'banner.jpg',//Slide Image
-			'title' =>__('Arctic NWA Cryotherapy.','arctic'),//Image Caption Heading
+			'title' =>__('ArcticNWA Cryotherapy.','arctic'),//Image Caption Heading
 			'text' =>__('Train harder. Recover Faster. Improve Performance.','arctic'),//Caption detail
 			'button_text' => __('Book Now','arctic'),
 			'link' => "#",
@@ -94,6 +95,10 @@ function theme_setup_data()
 			'how_it_works_image_two' =>__(get_template_directory_uri().'/images/temp.svg', 'arctic'),
 			'how_it_works_image_three' =>__(get_template_directory_uri().'/images/time.svg', 'arctic'),
 
+//What It Is Defaults
+			'what_it_is_headline' =>__('What is ArcticNWA Whole Body Cryotherapy?', 'arctic'),
+			'what_it_is_content_text' =>__('Whole Body Cryotherapy is one of the fastest-growing, holistic, wellness solutions that promotes natural healing at the cellular level. By exposing yourself to temperatures around -167°F with nitrogen vapor in the Arctic for up to three minutes, your body protects your internal organs by pushing blood to the core where it circulates, keeping your core temperature intact while your blood picks up vital nutrients. After exiting the Arctic, blood recirculates back into your outer extremities.'),
+			'what_it_is_image_one' =>__(get_template_directory_uri(). '/images/cryo.png', 'arctic'),
 			//accordion Defaults
 			'accordion_headline' =>__('Experience the benefits of Whole Body Cryotherapy.', 'arctic'),
 			'accordion_panel_one_header' =>__('Reduce Inflammation', 'arctic'),
@@ -117,6 +122,9 @@ function theme_setup_data()
 			'bullet_three_panel_two_accordion' => '',
 			'bullet_three_panel_three_accordion' => '',
 			'bullet_three_panel_four_accordion' => '',
+
+	//FAQ defaults
+	'FAQ_headline' =>__('Frequently asked questions', 'arctic'),
 
 
 
@@ -151,13 +159,6 @@ function theme_setup_data()
 			'contact_email'=>'info@arctic.com',
 			'contact_website'=>'https://www.arctic.com',
 			'google_map_url' => 'https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;ll=25.142832,75.879538',
-
-			// layout manager settings
-			'busi_layout_section1' => 'slider',
-			'busi_layout_section2' => 'Service Section',
-			'busi_layout_section3' => 'Project Section',
-			'busi_layout_section4' => 'Testimonials section',
-			'busi_layout_section5' => 'Client strip',
 
 	);
 

@@ -1,0 +1,82 @@
+@import 'variables.less';
+#faq-panel{
+        margin:30px 0 40px;
+.accordionFAQ {
+    overflow: hidden;
+    background: lighten(@fourth, 60%);
+    .accordion-section {
+        padding: 0;
+        &:first-of-type {
+            border-top: 1px solid @sixth;
+        }
+        h2 {
+            display:inline;
+        }
+        .accordion-section-title {
+            width: 100%;
+            padding: 15px;
+            display: inline-block;
+            border: 1px solid @sixth;
+            border-top: none;
+            background: @fifth;
+            transition: all linear 0.15s;
+            font-size: 1.200rem;
+            &:before {
+                font-family: 'fontAwesome';
+                content: '\f067';
+                color: @primary;
+                font-size: 1.65rem;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: text-bottom;
+                -moz-transition: all .5s ease;
+                -webkit-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                transition: all .5s ease;
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+            }
+            &:active,
+            &:focus,
+            &:hover {
+                background: @primary;
+                text-decoration: none;
+                color: @fifth;
+                &:before {
+                    color: @fifth;
+                }
+            }
+            &.active {
+                &:before {
+                    color: @secondary;
+                    -moz-transition: all .5s ease;
+                    -webkit-transition: all .5s ease;
+                    -ms-transition: all .5s ease;
+                    -o-transition: all .5s ease;
+                    transition: all .5s ease;
+                    -webkit-transform: rotate(225deg);
+                    -moz-transform: rotate(225deg);
+                    -ms-transform: rotate(225deg);
+                    -o-transform: rotate(225deg);
+                }
+            }
+        }
+    }
+    .open {
+        border:1px solid @sixth;
+        border-top:none;
+    }
+}
+}
+
+
+
+/*----- Section Content -----*/
+
+.accordionFAQ-section-content {
+    padding: 15px;
+    display: none;
+}

@@ -78,9 +78,12 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    height: 222px;
+    height: 322px;
     overflow: hidden;
-    position: relative
+    position: relative;
+    @media only screen and (min-width: 767px) {
+        height:222px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -117,13 +120,23 @@
     display: inline-block;
     left: 50%;
     position: absolute;
-    top: 40px;
+    top: 20px;
     transform: translate(-50%);
-    white-space: nowrap;
+    white-space: unset;
     z-index:200;
+    width:100%;
     h2{
         font-size: 2.8rem;
         margin:0;
+        padding-left:25px;
+@media only screen and (min-width: 767px) {
+padding-left:0;
+}
+    }
+    @media only screen and (min-width: 767px) {
+        white-space: nowrap;
+        width:auto;
+        top: 40px;
     }
 }
 

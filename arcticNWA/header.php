@@ -20,7 +20,6 @@
 
   gtag('config', 'UA-112228636-1');
 </script>
-
     <script src='https://www.google.com/recaptcha/api.js'></script>
 <?php include 'includes/accordion-style.php'; ?>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
@@ -29,9 +28,21 @@
 <body <?php body_class(); ?>>
     <nav class="navbar navbar-fixed-top" id="page-nav">
         <div class="container header-container">
+            <div class="row">
+                <div class="col-md-2 logs">
             <a href="<?php echo home_url(); ?>">
-              <img class="logo" src="images/logo.png" alt="ArcticNWA Logo">
+              <?php
+                if( $current_options['enable_logo_text'] == true ){
+                    bloginfo('name');
+                }else{
+                ?>
+                <img alt="<?php bloginfo("name"); ?>" src="<?php echo ( esc_url($current_options['upload_image']) ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                alt="<?php bloginfo("name"); ?>"
+                class="logo" style="width:<?php echo esc_html($current_options['width']).'px'; ?>; height:<?php echo esc_html($current_options['height']).'px'; ?>;">
+                <?php } ?>
             </a>
+            </div>
+            <div class="col-md-7">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -48,10 +59,14 @@
               'container' => 'false');
             wp_nav_menu($args); ?>
             </div>
+            </div>
             <!--/.navbar-collapse -->
+            <div class="col-md-3">
             <div class="bookContainer">
             <div class="bookCTA">
                 <a href="">book now</a>
+            </div>
+            </div>
             </div>
             </div>
         </div>
