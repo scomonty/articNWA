@@ -23,10 +23,10 @@
 	/*
 	 * Let WordPress manage the document title.
 	 */
-	add_theme_support( 'title-tag' );
+	//add_theme_support( 'title-tag' );
 	// supports featured image
-	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'custom-header');
+	//add_theme_support( 'post-thumbnails' );
+	//add_theme_support( 'custom-header');
 	// This theme uses wp_nav_menu() in two locations.
 } // busiporf_setup
 

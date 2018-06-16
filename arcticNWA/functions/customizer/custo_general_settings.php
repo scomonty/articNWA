@@ -82,6 +82,7 @@ function arctic_general_settings( $wp_customize ){
 		'type'           => 'checkbox'
 		) );
 
+
 	/* custom css section */
 	$wp_customize->add_section( 'custom_css_section' , array(
 		'title'      => __('Custom CSS', 'arctic'),
@@ -108,7 +109,7 @@ function arctic_general_settings( $wp_customize ){
    	) );
 
 		// copyright text
-		$wp_customize->add_setting( 'arctic_theme_options[footer_copyright_text]', array( 'default' => '<p>All Rights Reserved by arctic. Designed and Developed by <a href="'.esc_url('http://www.webriti.com').'" target="_blank">WordPress Theme</a>.</p> ' , 'type' => 'option', 'sanitize_callback' => 'arctic_copyright_sanitize_text' ) );
+		$wp_customize->add_setting( 'arctic_theme_options[footer_copyright_text]', array( 'default' => 'All Rights Reserved | <a href="'.esc_url('/sitemap').'" target="_blank">Sitemap</a> | <a href="http://www.webby-d.com" target="_blank">Designed and Built by Webby D</a>' , 'type' => 'option', 'sanitize_callback' => 'arctic_copyright_sanitize_text' ) );
 		$wp_customize->add_control(	'arctic_theme_options[footer_copyright_text]',
 			array(
 				'label'    => __( 'Copyright text','arctic' ),
@@ -123,32 +124,6 @@ function arctic_general_settings( $wp_customize ){
 		'panel'  => 'general_settings',
 		'priority'   => 4,
    	) );
-
-		//Layout Pro
-		class arctic_Customize_social_icon_upgrade extends WP_Customize_Control {
-			public function render_content() { ?>
-			<h3><?php _e('Want to add social icons? Then','arctic'); ?>
-			<a href="<?php echo esc_url( 'http://www.webriti.com/arctic' ); ?>" target="_blank">
-			<?php _e('Upgrade to Pro','arctic'); ?> </a>
-			<?php
-			}
-		}
-
-
-		$wp_customize->add_setting( 'social_icon_upgrade', array(
-			'capability'			=> 'edit_theme_options',
-			'sanitize_callback'	=> 'wp_filter_nohtml_kses',
-		));
-		$wp_customize->add_control(
-			new arctic_Customize_social_icon_upgrade(
-			$wp_customize,
-			'social_icon_upgrade',
-				array(
-					'section'				=> 'social_icons_section',
-					'settings'				=> 'social_icon_upgrade',
-				)
-			)
-		);
 
 		// Enable footer social icons
 		$wp_customize->add_setting( 'arctic_theme_options[footer_social_media_enabled]' , array( 'default' =>'' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
@@ -169,7 +144,6 @@ function arctic_general_settings( $wp_customize ){
 				'label'    => __( 'Twitter URL', 'arctic' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'text',
-				'input_attrs' => array('disabled'=>'disabled'),
 		));
 
 		// facebook icon
@@ -179,7 +153,6 @@ function arctic_general_settings( $wp_customize ){
 				'label'    => __( 'Facebook URL', 'arctic' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'text',
-				'input_attrs' => array('disabled'=>'disabled'),
 		));
 
 		// linkedin icon
@@ -189,7 +162,43 @@ function arctic_general_settings( $wp_customize ){
 				'label'    => __( 'LinkedIn URL', 'arctic' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'text',
-				'input_attrs' => array('disabled'=>'disabled'),
+		));
+
+				// snapchat icon
+		$wp_customize->add_setting( 'arctic_theme_options[footer_snapchat_link]', array( 'default' => 'http://snapchat.com/' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[footer_snapchat_link]',
+			array(
+				'label'    => __( 'Snapchat URL', 'arctic' ),
+				'section'  => 'social_icons_section',
+				'type'     => 'text',
+		));
+
+				// Instagram icon
+		$wp_customize->add_setting( 'arctic_theme_options[footer_instagram_link]', array( 'default' => 'http://instagram.com/' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[footer_instagram_link]',
+			array(
+				'label'    => __( 'Instagram URL', 'arctic' ),
+				'section'  => 'social_icons_section',
+				'type'     => 'text',
+		));
+
+		/* header button settings */
+	$wp_customize->add_section( 'header_button_section' , array(
+		'title'      => __('Header Button', 'arctic'),
+		'panel'  => 'general_settings',
+		'priority'   => 5,
+   	) );
+
+	// Enable header appointment button
+		$wp_customize->add_setting( 'arctic_theme_options[header_button_enabled]' , array( 'default' =>'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[header_button_enabled]' , array(
+				'label'    => __( "Enable appointment button in header", "arctic" ),
+				'section'  => 'header_button_section',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>'ON',
+					'off'=>'OFF'
+				)
 		));
 
 		function arctic_copyright_sanitize_text( $input ) {
@@ -213,7 +222,7 @@ add_action( 'customize_register', 'arctic_general_settings' );
 function arctic_register_copyright_section_partials( $wp_customize ){
 
 $wp_customize->selective_refresh->add_partial( 'arctic_theme_options[footer_copyright_text]', array(
-		'selector'            => '.site-info .col-md-7 p',
+		'selector'            => 'footer .legal',
 		'settings'            => 'arctic_theme_options[footer_copyright_text]',
 
 	) );

@@ -8,8 +8,8 @@
 					if ( ! empty( $arctic_slider_content_control ) ) {
 						$arctic_slider_content_control->default = json_encode( array(
 							array(
-							'title'      => isset($data['caption_head'])? $data['caption_head']:'Responsive WP themer',
-							'text'       => isset($data['caption_text'])? $data['caption_text'] :'We are a group of passionate designers and developers who really love to create awesome wordpress themes with amazing support and cooles video documentations.',
+							'title'      => isset($data['caption_head'])? $data['caption_head']:'',
+							'text'       => isset($data['caption_text'])? $data['caption_text'] :'',
 							'button_text'      => isset($data['readmore_text'])? $data['readmore_text'] : 'Read more',
 							'link'       => isset($data['readmore_text_link'])? $data['readmore_text_link'] : '#',
 							'image_url'  => isset($data['slider_image'])? $data['slider_image'] :  get_template_directory_uri().'/images/slide1.jpg',

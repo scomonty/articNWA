@@ -1,2 +1,11 @@
-https://wordpress.org/plugins/business-profile/
+
+ninja forms
+booking plugin
+SEO
+sitemap
+google tag
+google my business
+
+
+
 

@@ -49,4 +49,21 @@ $(document).ready(function() {
             }
         }]
     });
+
+//remodal call
+            $('.reviewCTA > a').on('click', function(e) {
+    $('[data-remodal-id=review-form-modal]').remodal({
+      hashTracking: false
+    }).open();
+    // $('.remodal-zipform .location-form input').focus();
+    e.preventDefault();
+  });
+            $('.bookCTA > a').on('click', function(e) {
+    $('[data-remodal-id=booking-form-modal]').remodal({
+      hashTracking: false
+    }).open();
+    // $('.remodal-zipform .location-form input').focus();
+    e.preventDefault();
+  });
+
 })

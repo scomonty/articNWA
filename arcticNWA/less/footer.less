@@ -1,15 +1,40 @@
 @import 'variables.less';
-footer{
-	text-align:center;
-	background:@primary;
-	padding:30px 0 40px;
-	color:@fifth;
-	a {
-		color:@fifth;
-		text-decoration:none;
-		&:hover {
-			color:@secondary;
-			text-decoration:none;
-		}
-	}
+footer {
+    text-align: center;
+    background: @secondary;
+    padding: 30px 0 40px;
+    color: @third;
+    p {
+        margin-bottom: 0;
+    }
+    h3 {
+        margin: 0;
+    }
+    .phoneNumber {
+        &:before {
+            font-family: 'fontAwesome';
+            content: '\f095';
+            color: @primary;
+            margin-right: 8px;
+            font-size: 1.8rem;
+            margin-left: -28px;
+        }
+    }
+    a {
+        color: @third;
+        text-decoration: none;
+        &:hover {
+            color: @primary;
+            text-decoration: none;
+        }
+    }
+    .legal {
+        font-size: 1.2rem;
+    }
+    .foot-space{
+        margin-bottom:20px;
+        @media only screen and (min-width:767px){
+            margin:0;
+        }
+    }
 }

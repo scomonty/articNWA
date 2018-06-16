@@ -10,7 +10,9 @@
         <?php wp_title('|', true, 'right'); ?>
         <?php bloginfo('name'); ?>
     </title>
-    <?php  wp_head(); ?>
+    <?php  wp_head();
+$current_options = wp_parse_args(  get_option( 'arctic_theme_options', array() ), theme_setup_data() );
+?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112228636-1"></script>
 <script>
@@ -62,11 +64,13 @@
             </div>
             <!--/.navbar-collapse -->
             <div class="col-md-3">
+<?php if( $current_options['header_button_enabled'] == 'on') { ?>
             <div class="bookContainer">
             <div class="bookCTA">
-                <a href="">book now</a>
+                <a href="">book an appointment</a>
             </div>
             </div>
+        <?php } ?>
             </div>
             </div>
         </div>

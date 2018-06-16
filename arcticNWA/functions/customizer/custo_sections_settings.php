@@ -13,14 +13,14 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		'title'      => __('Homepage section settings', 'arctic'),
 	) );
 
-	/* Slider Section */
+	/* Banner Section */
 	$wp_customize->add_section( 'slider_section' , array(
 		'title'      => __('Banner Settings', 'arctic'),
 		'panel'  => 'section_settings',
 		'priority'   => 0,
    	) );
 
-		// Enable slider
+		// Enable banner
 		$wp_customize->add_setting( 'arctic_theme_options[home_page_banner_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'arctic_theme_options[home_page_banner_enabled]' , array(
 				'label'    => __('Enable Banner', 'arctic' ),
@@ -62,13 +62,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'textarea',
 		));
 
-
-
 		//Slider read more button
 		$wp_customize->add_setting(
 		'arctic_theme_options[readmore_text]',
 			array(
-			'default'        => __('Book Now','arctic'),
+			'default'        => __('Book An Appontment','arctic'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'arctic_input_field_sanitize_text',
 			'type' => 'option',
@@ -77,38 +75,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'label'   => __('Button Text', 'arctic'),
 			'section' => 'slider_section',
 			'type' => 'text',
-		));
-
-
-		//Slider read more button link
-		$wp_customize->add_setting(
-		'arctic_theme_options[readmore_text_link]',
-			array(
-			'default'        => __('#','arctic'),
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'arctic_input_field_sanitize_text',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('arctic_theme_options[readmore_text_link]', array(
-			'label'   => __('Button Link', 'arctic'),
-			'section' => 'slider_section',
-			'type' => 'text',
-		));
-
-
-		//Slider read more button target
-		$wp_customize->add_setting(
-		'arctic_theme_options[readmore_target]',
-			array(
-			'default'        => false,
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'arctic_input_field_sanitize_text',
-			'type' => 'option',
-		));
-		$wp_customize->add_control('arctic_theme_options[readmore_target]', array(
-			'label'   => __('Open link in new tab', 'arctic'),
-			'section' => 'slider_section',
-			'type' => 'checkbox',
 		));
 
 
@@ -189,7 +155,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			)
 		);
 
-
 		//How It Works One Description
 		$wp_customize->add_setting(
 		'arctic_theme_options[how_it_works_project_text_one]', array(
@@ -203,7 +168,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'section' => 'howItWorks_section',
 			'type' => 'textarea',
 		));
-
 
 		//How It Works Two image
 		$wp_customize->add_setting( 'arctic_theme_options[how_it_works_project_thumb_two]',array('default' => get_template_directory_uri().'/images/temp.svg',
@@ -458,7 +422,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'textarea',
 		));
 
-
 		//Testimional Section
 	$wp_customize->add_section( 'testimonials_settings' , array(
 		'title'      => __('Testimonial settings', 'arctic'),
@@ -503,7 +466,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 				) ) );
 		}
 
-/* How it Works section */
+/* What It Is section */
 	$wp_customize->add_section( 'whatItIs_section' , array(
 		'title'      => __('What It Is settings', 'arctic'),
 		'panel'  => 'section_settings',
@@ -558,6 +521,145 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		);
 
 
+			/* Map section */
+	$wp_customize->add_section( 'find_us_section' , array(
+		'title'      => __('Find Us settings', 'arctic'),
+		'panel'  => 'section_settings',
+		'priority'   => 1,
+   	) );
+
+		// Enable how to find us panel
+		$wp_customize->add_setting( 'arctic_theme_options[find_us_panel_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[find_us_panel_enabled]' , array(
+				'label'    => __('Enable How To Find Us Panel', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>'ON',
+					'off'=>'OFF'
+				)
+		));
+
+		// How To Find Us headline
+		$wp_customize->add_setting( 'arctic_theme_options[find_us_head_title]',
+		array( 'default' => __('How to find us.','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[find_us_head_title]',
+			array(
+				'label'    => __( 'Find Us Headline', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'textarea',
+		));
+		// Buesiness Name
+		$wp_customize->add_setting( 'arctic_theme_options[find_us_business]',
+		array( 'default' => __('ArcticNWA Cryotherapy','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[find_us_business]',
+			array(
+				'label'    => __( 'Business Name', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+		// Street Address
+		$wp_customize->add_setting( 'arctic_theme_options[find_us_street]',
+		array( 'default' => __('207 Atlanta Street SE','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[find_us_street]',
+			array(
+				'label'    => __( 'Street Address', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+		// City State Zip Address
+		$wp_customize->add_setting( 'arctic_theme_options[find_us_city]',
+		array( 'default' => __('Gravette, Arkansas 72736','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[find_us_city]',
+			array(
+				'label'    => __( 'City State Zip Address', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+		// Phone Address
+		$wp_customize->add_setting( 'arctic_theme_options[find_us_phone]',
+		array( 'default' => __('479.787.7555','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[find_us_phone]',
+			array(
+				'label'    => __( 'Phone Number', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+		// Monday hours
+		$wp_customize->add_setting( 'arctic_theme_options[mon_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[mon_hours]',
+			array(
+				'label'    => __( 'Monday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+		// Tuesday hours
+		$wp_customize->add_setting( 'arctic_theme_options[tue_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[tue_hours]',
+			array(
+				'label'    => __( 'Tuesday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+				// Wednesday hours
+		$wp_customize->add_setting( 'arctic_theme_options[wed_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[wed_hours]',
+			array(
+				'label'    => __( 'Wednesday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+				// Thursday hours
+		$wp_customize->add_setting( 'arctic_theme_options[thu_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[thu_hours]',
+			array(
+				'label'    => __( 'Thursday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+				// Friday hours
+		$wp_customize->add_setting( 'arctic_theme_options[fri_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[fri_hours]',
+			array(
+				'label'    => __( 'Friday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+				// Saturday hours
+		$wp_customize->add_setting( 'arctic_theme_options[sat_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[sat_hours]',
+			array(
+				'label'    => __( 'Saturday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+				// Sunday hours
+		$wp_customize->add_setting( 'arctic_theme_options[sun_hours]',
+		array( 'default' => __('12am - 12am','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[sun_hours]',
+			array(
+				'label'    => __( 'Sunday Hours', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -570,10 +672,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		'panel'  => 'section_settings',
 		'priority'   => 6,
    	) );
-
-
-
-
 
 		function arctic_input_field_sanitize_text( $input )
 		{
@@ -704,19 +802,87 @@ function arctic_register_home_section_partials( $wp_customize ){
 		'selector'            => '#WhatItIs p',
 		'settings'            => 'arctic_theme_options[what_it_is_text]',
 	) );
-
-
-
-
-
-
-
-
-	$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[recent_blog_title]', array(
-		'selector'            => '.home-post-latest .section-heading',
-		'settings'            => 'arctic_theme_options[recent_blog_title]',
-
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[find_us_head_title]', array(
+		'selector'            => '#mapPanel h2',
+		'settings'            => 'arctic_theme_options[find_us_head_title]',
 	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[mon_hours]', array(
+		'selector'            => '.monday',
+		'settings'            => 'arctic_theme_options[mon_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[tue_hours]', array(
+		'selector'            => '#mapPanel .tuesday, #contact-page .tuesday',
+		'settings'            => 'arctic_theme_options[tue_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[wed_hours]', array(
+		'selector'            => '#mapPanel .wednesday, #contact-page .wednesday',
+		'settings'            => 'arctic_theme_options[wed_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[thu_hours]', array(
+		'selector'            => '#mapPanel .thursday, #contact-page .thursday',
+		'settings'            => 'arctic_theme_options[thu_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[fri_hours]', array(
+		'selector'            => '#mapPanel .friday, #contact-page .friday',
+		'settings'            => 'arctic_theme_options[fri_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[sat_hours]', array(
+		'selector'            => '#mapPanel .saturday, #contact-page .saturday',
+		'settings'            => 'arctic_theme_options[sat_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[sun_hours]', array(
+		'selector'            => '#mapPanel .sunday, #contact-page .sunday',
+		'settings'            => 'arctic_theme_options[sun_hours]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[find_us_business]', array(
+		'selector'            => '#mapPanel .left h3, #contact-page .left h3',
+		'settings'            => 'arctic_theme_options[find_us_business]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[find_us_street]', array(
+		'selector'            => '#mapPanel .street, #contact-page .street',
+		'settings'            => 'arctic_theme_options[find_us_street]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[find_us_city]', array(
+		'selector'            => '#mapPanel .cityState, #contact-page .cityState',
+		'settings'            => 'arctic_theme_options[find_us_city]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[find_us_phone]', array(
+		'selector'            => '#mapPanel .phoneNumber, #contact-page .phoneNumber',
+		'settings'            => 'arctic_theme_options[find_us_phone]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[upload_image]', array(
+		'selector'            => '.logs',
+		'settings'            => 'arctic_theme_options[upload_image]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[upload_image]', array(
+		'selector'            => '.logs',
+		'settings'            => 'arctic_theme_options[upload_image]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[header_button_enabled]', array(
+		'selector'            => '.bookContainer .bookCTA',
+		'settings'            => 'arctic_theme_options[header_button_enabled]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[footer_social_media_enabled]', array(
+		'selector'            => '.footerSocial',
+		'settings'            => 'arctic_theme_options[footer_social_media_enabled]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[FAQ_head_titled]', array(
+		'selector'            => '#faq-panel h1',
+		'settings'            => 'arctic_theme_options[FAQ_head_title]',
+	) );
+		$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[contact_head_titled]', array(
+		'selector'            => '#contact-page h1',
+		'settings'            => 'arctic_theme_options[contact_head_title]',
+	) );
+
+
+
+
+
+
+
+
+
 
 	$wp_customize->selective_refresh->add_partial( 'arctic_theme_options[recent_blog_description]', array(
 		'selector'            => '.home-post-latest .section-title p',

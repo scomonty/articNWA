@@ -30,23 +30,29 @@
         }
     }
     .bookContainer {
-        margin-top: 14px;
+        margin-top: 25px;
         float: right;
         display: none;
         @media only screen and (min-width: 800px) {
             display:block;
         }
-        .bookCTA {
-            background: @primary;
-            border-radius: 5px;
-            padding: 8px;
-            text-transform: uppercase;
-            a {
-                color: @fifth;
-                font-weight: 700;
-                font-size: 1.4rem;
+        .bookCTA{
+        text-transform:uppercase;
+    display: block;
+    margin: 0 auto;
+        a{
+            background:@primary;
+            border-radius:5px;
+            padding:10px 20px;
+            color:@fifth;
+            font-weight:700;
+            font-size:1.4rem;
+                        &:hover {
+                text-decoration:none;
             }
+
         }
+    }
     }
     .navbar-nav {
         text-transform: uppercase;
@@ -70,6 +76,9 @@
                 text-decoration: none;
             }
         }
+    }
+    .current-menu-item{
+        border-bottom:3px solid @primary;
     }
 }
 

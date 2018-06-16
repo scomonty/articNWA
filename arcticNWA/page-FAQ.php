@@ -1,8 +1,8 @@
 <?php /* Template Name: FAQ Template */ ?>
 
-<?php get_header(); ?>
 <?php
-$slide_options = wp_parse_args(  get_theme_mod('arctic_slider_content', array()), theme_setup_data() );
+get_header();
+include 'includes/secondaryBanner.php';
 $current_options = wp_parse_args(  get_option( 'arctic_theme_options', array() ), theme_setup_data() );
 if( $current_options['frequently_asked_question_panel_enabled'] == 'on'){
     ?>

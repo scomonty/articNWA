@@ -10,6 +10,8 @@ get_header();
           the_content();
           endwhile; endif;
           include 'includes/reviewsPanel.php';
-          include 'includes/mapPanel.php';?>
+          include 'includes/mapPanel.php';
+          include 'includes/review_modal.php';
+          include 'includes/booking.php'; ?>
          <div id="back-top"><a href="#"></a></div>
 <?php get_footer(); ?>

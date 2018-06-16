@@ -17,8 +17,8 @@ function theme_setup_data()
 			'front_page'  => 'yes',
 
 			'upload_image'=>'',
-			'width'=>'138',
-			'height'=>'49',
+			'width'=>'7.5rem',
+			'height'=>'auto',
 			'enable_logo_text'=>false,
 
 			'upload_image_favicon'=>'',
@@ -39,12 +39,13 @@ function theme_setup_data()
 			'how_it_works_panel_enabled'=>'on',
 			'accordion_panel_enabled'=>'on',
 			'what_it_is_panel_enabled' =>'on',
+			'find_us_panel_enabled' =>'on',
 			'frequently_asked_question_panel_enabled' =>'on',
 			//'slider_head_title' =>__('arctic: the perfect WordPress theme for an app and web developer','arctic'),//Slide Heading
 			'banner_image'=>  $template_uri .'banner.jpg',//Slide Image
 			'title' =>__('ArcticNWA Cryotherapy.','arctic'),//Image Caption Heading
 			'text' =>__('Train harder. Recover Faster. Improve Performance.','arctic'),//Caption detail
-			'button_text' => __('Book Now','arctic'),
+			'button_text' => __('Book An Appointment','arctic'),
 			'link' => "#",
 			'readmore_target'=> false,
 
@@ -63,15 +64,16 @@ function theme_setup_data()
 
 			'arctic_custom_css' =>"",
 
-			'footer_copyright_text'=> '<p>All Rights Reserved by arctic. Designed and Developed by
-			<a href="'.esc_url('http://www.webriti.com').'" target="_blank">WordPress Theme</a>.</p>',
+			'footer_copyright_text'=> 'All Rights Reserved | <a href="'.esc_url('/sitemap').'" target="_blank">Sitemap</a> | <a href="http://www.webby-d.com" target="_blank">Designed and Built by Webby D</a>',
 
 			'footer_social_media_enabled'=>'on',
 			'footer_twitter_link' =>"#",
 			'footer_facebook_link' =>"#",
 			'footer_linkedin_link' =>"#",
-			'footer_google_link' => '#',
-			'footer_skype_link' => '#',
+			'footer_snapchat_link' => '#',
+			'footer_instagram_link' => '#',
+
+			'header_button_enabled' => 'on',
 
 			'enable_projects' => 'on',
 			'portfolio_section_enabled' => 'on',
@@ -122,6 +124,21 @@ function theme_setup_data()
 			'bullet_three_panel_two_accordion' => '',
 			'bullet_three_panel_three_accordion' => '',
 			'bullet_three_panel_four_accordion' => '',
+
+
+
+			//Map settings
+			'monday_hours' => 'Closed',
+			'tuesday_hours' => 'Closed',
+			'wednesday_hours' => 'Closed',
+			'thursday_hours' => 'Closed',
+			'friday_hours' => 'Closed',
+			'saturday_hours' => 'Closed',
+			'sunday_hours' => 'Closed',
+			'find_us_street_default' => '207 Atlanta Street SE',
+			'find_us_city_default' => 'Gravette Arkansas 72736',
+			'find_us_phone_default' => '555-555-5555',
+			'find_us_business_default' => 'ArcticNWA Cryotherapy',
 
 	//FAQ defaults
 	'FAQ_headline' =>__('Frequently asked questions', 'arctic'),

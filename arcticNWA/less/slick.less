@@ -4,7 +4,7 @@
 .slick-prev,
 .slick-next {
     position: absolute;
-    display: block;
+    display: none!important;
     height: 20px;
     width: 20px;
     line-height: 0;
@@ -23,11 +23,14 @@
     &.slick-disabled:before {
         opacity: 0.25;
     }
+    @media only screen and (min-width:767px) {
+        display:block!important;
+    }
 }
 
 .slick-prev:before, .slick-next:before {
     font-family: 'fontAwesome';
-    font-size: 30px;
+    font-size: 3.0rem;
     line-height: 1;
     color: @third;
     opacity: 0.85;
