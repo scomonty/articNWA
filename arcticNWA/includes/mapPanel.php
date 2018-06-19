@@ -13,7 +13,7 @@ if( $current_options['find_us_panel_enabled'] == 'on'){
                             else { ?> <h2><?php echo ($slide_options['find_us_headline']); ?></h2> <?php }?>
     <div class="clear"></div>
     <div class="flex">
-		<div class="col-md-6  flexW left">
+		<div class="flexW <?php if($current_options['map_api']!='') {  echo (' col-md-6 left'); } else { echo (' col-md-12'); }?> ">
 			<?php if($current_options['find_us_business']!='') {?><h3><?php echo esc_html($current_options['find_us_business']); ?></h3><?php }else { ?> <h3><?php echo ($slide_options['find_us_business_default']); ?></h3> <?php }?>
 			<?php if($current_options['find_us_street']!='')?><p class="street"><?php { echo esc_html($current_options['find_us_street']); ?></p><?php } ?>
 			<?php if($current_options['find_us_city']!='')?><p class="cityState"><?php { echo esc_html($current_options['find_us_city']); ?></p><?php } ?>
@@ -34,17 +34,21 @@ if( $current_options['find_us_panel_enabled'] == 'on'){
 							else { ?> <a class="button" href=<?php echo ($current_options['readmore_text_link'])?>><?php echo ($slide_options['button_text']); ?></a> <?php }?>
 	</div>
 		</div>
+		<?php if($current_options['map_api']!='') {?>
 					<div class="col-md-6  flexW">
 			<iframe
   width="100%"
   height="450"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvsmXUS0xsKnlv7D1nzp92PPfVHsrWL9E
+  src="https://www.google.com/maps/embed/v1/place?key=<?php echo ($current_options['map_api'])?>
     &q=207+Atlanta+Street+SE+Gravette+Arkansas+72736" allowfullscreen>
 </iframe>
 		</div>
+		<?php } ?>
 	</div>
 	</div>
 </div>
 </div>
 <?php }?>
+
+

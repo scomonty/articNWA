@@ -88,9 +88,13 @@ switch ($designation) {
 			</div>
 		</div>
 	</div>
+	<?php
+	if( $current_options['home_testimonials_button_enabled'] == 'on'){
+	?>
 	<div class="reviewCTA">
 		<a href="">leave a review</a>
 		</div>
+	<?php }?>
 	</div>
 </div>
 <?php } ?>

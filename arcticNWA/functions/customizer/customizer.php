@@ -12,7 +12,7 @@
 							'text'       => isset($data['caption_text'])? $data['caption_text'] :'',
 							'button_text'      => isset($data['readmore_text'])? $data['readmore_text'] : 'Read more',
 							'link'       => isset($data['readmore_text_link'])? $data['readmore_text_link'] : '#',
-							'image_url'  => isset($data['slider_image'])? $data['slider_image'] :  get_template_directory_uri().'/images/slide1.jpg',
+							'image_url'  => isset($data['banner_background'])? $data['banner_background'] :  get_template_directory_uri().'/images/banner.jpg',
 							'open_new_tab' => isset($data['readmore_target'])? $data['readmore_target'] : false,
 							'id'         => 'customizer_repeater_56d7ea7f40b50',
 							),

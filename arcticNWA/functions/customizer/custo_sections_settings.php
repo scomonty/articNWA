@@ -14,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	) );
 
 	/* Banner Section */
-	$wp_customize->add_section( 'slider_section' , array(
+	$wp_customize->add_section( 'banner_section' , array(
 		'title'      => __('Banner Settings', 'arctic'),
 		'panel'  => 'section_settings',
 		'priority'   => 0,
@@ -24,13 +24,28 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		$wp_customize->add_setting( 'arctic_theme_options[home_page_banner_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'arctic_theme_options[home_page_banner_enabled]' , array(
 				'label'    => __('Enable Banner', 'arctic' ),
-				'section'  => 'slider_section',
+				'section'  => 'banner_section',
 				'type'     => 'radio',
 				'choices' => array(
 					'on'=>'ON',
 					'off'=>'OFF'
 				)
 		));
+		$wp_customize->add_setting( 'arctic_theme_options[banner_background]',array('default' => get_template_directory_uri().'/images/banner.jpg',
+		'type' => 'option','sanitize_callback' => 'esc_url_raw',));
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'arctic_theme_options[banner_background]',
+				array(
+					'label' => __('Banner Image','arctic'),
+					'settings' =>'arctic_theme_options[banner_background]',
+					'section' => 'banner_section',
+					'type' => 'upload',
+				)
+			)
+		);
 
 
 		//Banner Title
@@ -43,11 +58,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		$wp_customize->add_control('arctic_theme_options[caption_head]', array(
 			'label'   => __('Title', 'arctic'),
-			'section' => 'slider_section',
+			'section' => 'banner_section',
 			'type' => 'text',
 		));
 
-		//Slider sub title
+		//Banner sub title
 		$wp_customize->add_setting(
 		'arctic_theme_options[caption_text]',
 			array(
@@ -58,11 +73,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		$wp_customize->add_control('arctic_theme_options[caption_text]', array(
 			'label'   => __('Description', 'arctic'),
-			'section' => 'slider_section',
+			'section' => 'banner_section',
 			'type' => 'textarea',
 		));
 
-		//Slider read more button
+		//Baanner take action button
 		$wp_customize->add_setting(
 		'arctic_theme_options[readmore_text]',
 			array(
@@ -73,7 +88,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		$wp_customize->add_control('arctic_theme_options[readmore_text]', array(
 			'label'   => __('Button Text', 'arctic'),
-			'section' => 'slider_section',
+			'section' => 'banner_section',
 			'type' => 'text',
 		));
 
@@ -465,6 +480,26 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 				'customizer_repeater_designation_control' => true,
 				) ) );
 		}
+		$wp_customize->add_setting( 'arctic_theme_options[home_testimonials_button_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'  ) );
+		$wp_customize->add_control(	'arctic_theme_options[home_testimonials_button_enabled]' , array(
+				'label'    => __( 'Show "Leave A Review" Button', 'arctic' ),
+				'section'  => 'testimonials_settings',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>__('ON', 'arctic'),
+					'off'=>__('OFF', 'arctic')
+				)
+		));
+		// testmonial modal
+		$wp_customize->add_setting( 'arctic_theme_options[testimonials_modal]',
+		array( 'default' => __('Don\'t just take our word for it.', 'arctic' ) , 'type'=>'option', 'sanitize_callback' => 'arctic_input_field_sanitize_text'  ) );
+		$wp_customize->add_control(	'arctic_theme_options[testimonials_modal]',
+			array(
+				'label'    => __( 'Testimonial submit form Ninja Forms shortcode', 'arctic' ),
+				'section'  => 'testimonials_settings',
+				'type'     => 'text',
+		));
+
 
 /* What It Is section */
 	$wp_customize->add_section( 'whatItIs_section' , array(
@@ -648,6 +683,14 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 				'section'  => 'find_us_section',
 				'type'     => 'text',
 		));
+		$wp_customize->add_setting( 'arctic_theme_options[map_api]',
+		array( 'default' => __('','arctic') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'arctic_theme_options[map_api]',
+			array(
+				'label'    => __( 'Google API map key', 'arctic' ),
+				'section'  => 'find_us_section',
+				'type'     => 'text',
+		));
 
 
 
@@ -667,7 +710,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 
 
 		/* Client Slider Section */
-	$wp_customize->add_section( 'clientslider_section' , array(
+	$wp_customize->add_section( 'clientbanner_section' , array(
 		'title'      => __('Client Slider setting', 'arctic'),
 		'panel'  => 'section_settings',
 		'priority'   => 6,

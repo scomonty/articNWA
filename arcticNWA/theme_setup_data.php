@@ -41,8 +41,9 @@ function theme_setup_data()
 			'what_it_is_panel_enabled' =>'on',
 			'find_us_panel_enabled' =>'on',
 			'frequently_asked_question_panel_enabled' =>'on',
+			'contact_adress_map_enabled' =>'on',
 			//'slider_head_title' =>__('arctic: the perfect WordPress theme for an app and web developer','arctic'),//Slide Heading
-			'banner_image'=>  $template_uri .'banner.jpg',//Slide Image
+			'banner_background'=>  $template_uri .'banner.jpg',//Slide Image
 			'title' =>__('ArcticNWA Cryotherapy.','arctic'),//Image Caption Heading
 			'text' =>__('Train harder. Recover Faster. Improve Performance.','arctic'),//Caption detail
 			'button_text' => __('Book An Appointment','arctic'),
@@ -163,6 +164,8 @@ function theme_setup_data()
 			'testimonials_name_two' => 'Natalie Portman', // Testimonials name
 			'testimonials_designation_two' => __('(Sales & Marketing)','arctic'), // testmonials designation
 			'testimonial_tagline' => __('We are a group of passionate designers & developers','arctic'),
+			'testimonial_form_submit' => '',
+			'home_testimonials_button_enabled' => 'on',
 
 			'recent_blog_title' =>__('Recent Blog','arctic'),
 			'recent_blog_description' =>__('We are a group of passionate designers & developers','arctic'),

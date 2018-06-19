@@ -3,7 +3,9 @@ $slide_options = wp_parse_args(  get_theme_mod('arctic_slider_content', array())
 $current_options = wp_parse_args(  get_option( 'arctic_theme_options', array() ), theme_setup_data() );
 if( $current_options['home_page_banner_enabled'] == 'on'){
 ?>
-<div id="bannerPanel">
+<div id="bannerPanel" <?php if($current_options['banner_background']!='') {?>
+							style="background: url( <?php echo esc_html($current_options['banner_background']); ?>;"
+							<?php } ?> >
 	<div class="container">
 	<div class="row">
 		<div class="banner">
